@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scikit-decide - Details</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic vectors --><script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for a modern, rounded aesthetic */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background similar to GitHub */
+            color: #c9d1d9; /* Light text */
+            scroll-behavior: smooth;
+        }
+        .main-content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+        .project-image {
+            width: 100%;
+            height: auto;
+            max-height: 500px; /* Optional: Constrain image height */
+            object-fit: contain; /* Ensure image fits without cropping, or 'cover' if you prefer */
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation --><header class="sticky top-0 z-50 bg-[#0d1117]/90 backdrop-blur-md shadow-lg border-b border-[#30363d]">
+        <div class="main-content-container flex justify-between items-center py-4 px-4 sm:px-6 md:px-8">
+            <a href="index.html" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition duration-300">
+                Hamda Hmida
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300">Home</a>
+                <a href="projects.html" class="text-lg hover:text-teal-400 transition duration-300 font-semibold text-white">Projects</a>
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button --><button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-[#161b22] transition duration-300">
+                <i data-lucide="menu" class="w-6 h-6 text-teal-400"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer (Hidden by default) --><div id="mobile-menu" class="fixed inset-0 bg-[#0d1117] z-40 hidden md:hidden p-6">
+        <div class="flex justify-end">
+            <button id="close-menu-btn" class="p-2 rounded-lg hover:bg-[#161b22] transition duration-300">
+                <i data-lucide="x" class="w-6 h-6 text-teal-400"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4 mt-8 text-2xl">
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Home</a>
+            <a href="projects.html" class="py-2 hover:text-teal-400 transition duration-300 font-semibold text-white" onclick="closeMenu()">Projects</a>
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Contact</a>
+        </nav>
+    </div>
+
+    <main class="main-content-container pt-8 min-h-[80vh]">
+        <section class="py-10">
+            <div class="flex items-center mb-8">
+                <a href="projects.html" class="inline-flex items-center text-teal-400 hover:text-teal-300 transition duration-300">
+                    <i data-lucide="arrow-left" class="w-5 h-5 mr-2"></i> Back to Projects
+                </a>
+            </div>
+
+            <h1 class="text-5xl font-extrabold text-center mb-6 text-teal-400">[Project Name]</h1>
+            <p class="text-xl text-center text-gray-400 max-w-3xl mx-auto mb-12">
+                A brief, engaging tagline for the project, highlighting its core purpose or innovation.
+            </p>
+            
+            <div class="card p-8 md:p-10 lg:p-12">
+                <div class="flex flex-col lg:flex-row gap-10 items-start">
+                    
+                    <!-- Left Column: Image/GIF --><div class="lg:w-1/2 w-full flex-shrink-0">
+                        <img src="https://placehold.co/800x600/161b22/c9d1d9?text=Project+Screenshot+or+GIF" 
+                             alt="[Project Name] Screenshot/GIF" 
+                             class="project-image">
+                        <figcaption class="text-center text-gray-500 text-sm mt-3">
+                            A compelling visual of the project in action.
+                        </figcaption>
+                        
+                        <div class="mt-8 flex flex-wrap gap-4 justify-center lg:justify-start">
+                            <!-- Project Links --><a href="#" target="_blank" class="inline-flex items-center px-5 py-2 text-lg font-semibold text-[#0d1117] bg-teal-400 rounded-lg hover:bg-teal-300 transition duration-300 shadow-lg hover:shadow-teal-500/50">
+                                <i data-lucide="link" class="w-5 h-5 mr-2"></i> Live Demo
+                            </a>
+                            <a href="#" target="_blank" class="inline-flex items-center px-5 py-2 text-lg font-semibold text-teal-400 bg-[#161b22] border border-teal-400 rounded-lg hover:bg-teal-700 hover:border-teal-700 transition duration-300 shadow-lg">
+                                <i data-lucide="github" class="w-5 h-5 mr-2"></i> GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Textual Description --><div class="lg:w-1/2 w-full">
+                        <h2 class="text-3xl font-bold mb-4 text-teal-400">Overview & Problem Solved</h2>
+                        <p class="text-lg text-gray-300 mb-6">
+                            This project addresses [specific problem or challenge]. The primary goal was to [explain objective]. I developed this solution to [impact or benefit].
+                        </p>
+
+                        <h3 class="text-2xl font-bold mb-3 text-teal-400">Technical Details & Stack</h3>
+                        <p class="text-lg text-gray-300 mb-4">
+                            The application was built using a robust stack. On the frontend, I utilized <span class="text-orange-300 font-medium">[Frontend Tech, e.g., React.js with Next.js]</span> for a dynamic user interface. The backend was powered by <span class="text-blue-300 font-medium">[Backend Tech, e.g., Node.js with Express]</span>, providing [specific backend functionality]. Data persistence was handled by <span class="text-purple-300 font-medium">[Database, e.g., PostgreSQL]</span>, and the entire system was deployed using <span class="text-green-300 font-medium">[Deployment tools, e.g., Docker and Kubernetes]</span>.
+                        </p>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            <span class="bg-yellow-900/50 text-yellow-300 text-sm font-medium px-3 py-1 rounded-full">Frontend Tech 1</span>
+                            <span class="bg-green-900/50 text-green-300 text-sm font-medium px-3 py-1 rounded-full">Frontend Tech 2</span>
+                            <span class="bg-blue-900/50 text-blue-300 text-sm font-medium px-3 py-1 rounded-full">Backend Tech 1</span>
+                            <span class="bg-red-900/50 text-red-300 text-sm font-medium px-3 py-1 rounded-full">Backend Tech 2</span>
+                            <span class="bg-indigo-900/50 text-indigo-300 text-sm font-medium px-3 py-1 rounded-full">Database</span>
+                            <span class="bg-teal-900/50 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">Cloud/DevOps</span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold mb-3 text-teal-400">Key Features Implemented</h3>
+                        <ul class="list-disc list-inside text-lg text-gray-300 mb-6 space-y-2 ml-4">
+                            <li>Implemented [Feature 1]: Describe its functionality and value.</li>
+                            <li>Designed and developed [Feature 2]: Explain the technical approach and impact.</li>
+                            <li>Optimized [Feature 3] for [performance/scalability/user experience].</li>
+                            <li>Integrated with [Third-party service/API]: Detail the role and challenge.</li>
+                        </ul>
+
+                        <h3 class="text-2xl font-bold mb-3 text-teal-400">My Role & Contributions</h3>
+                        <p class="text-lg text-gray-300">
+                            As a [Your Role, e.g., Lead Developer], I was responsible for [specific responsibilities, e.g., the end-to-end development of the authentication module, architectural design of the database, or mentoring junior developers]. My contributions included [list specific achievements, e.g., "reducing load times by 30%", "implementing a new real-time communication feature", "refactoring legacy code for better maintainability"].
+                        </p>
+
+                        <!-- Add more sections as needed: Challenges, Future Improvements, Lessons Learned --><div class="mt-8 pt-6 border-t border-[#30363d]">
+                            <h3 class="text-2xl font-bold mb-3 text-teal-400">Challenges & Learnings</h3>
+                            <p class="text-lg text-gray-300">
+                                During development, a significant challenge was [describe a challenge]. I overcame this by [explain your solution/approach], which taught me [key learning]. This experience reinforced my understanding of [relevant concept or technology].
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer --><footer id="footer" class="bg-[#161b22] border-t border-[#30363d] py-6 mt-12">
+        <div class="main-content-container text-center text-sm text-gray-500">
+            <p>&copy; 2024 Your Name. All rights reserved.</p>
+            <p class="mt-1">Static Site deployed via GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Icon rendering --><script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        // Toggle mobile menu visibility
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Function to close the menu after clicking a link (used in anchor tags)
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Smooth scrolling for navigation links (though less critical on a single detail page)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

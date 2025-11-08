@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Portfolio</title>
+    <title>Hamda Hmida</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Load Lucide Icons for aesthetic vectors -->
@@ -16,21 +16,16 @@
             color: #c9d1d9; /* Light text */
             scroll-behavior: smooth;
         }
-        .section-container {
-            max-width: 1200px;
+        .main-content-container {
+            max-width: 1400px;
             margin: 0 auto;
-            padding: 4rem 1rem;
+            padding: 2rem 1rem;
         }
         .card {
-            background-color: #161b22; /* Slightly lighter dark background for cards */
+            background-color: #161b22;
             border: 1px solid #30363d;
             border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-        .card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+            padding: 1.5rem;
         }
     </style>
 </head>
@@ -38,14 +33,15 @@
 
     <!-- Header & Navigation -->
     <header class="sticky top-0 z-50 bg-[#0d1117]/90 backdrop-blur-md shadow-lg border-b border-[#30363d]">
-        <div class="section-container flex justify-between items-center py-4 px-4 sm:px-6 md:px-8">
-            <a href="#home" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition duration-300">
-                Your Name
+        <div class="main-content-container flex justify-between items-center py-4 px-4 sm:px-6 md:px-8">
+            <a href="index.html" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition duration-300">
+                Hamda Hmida
             </a>
             <nav class="hidden md:flex space-x-6">
-                <a href="#about" class="text-lg hover:text-teal-400 transition duration-300">About</a>
-                <a href="#projects" class="text-lg hover:text-teal-400 transition duration-300">Projects</a>
-                <a href="#contact" class="text-lg hover:text-teal-400 transition duration-300">Contact</a>
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300 font-semibold text-white">Home</a>
+                <a href="projects.html" class="text-lg hover:text-teal-400 transition duration-300">Projects</a>
+                <!-- You might add a Resume link here later -->
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300">Contact</a>
             </nav>
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-[#161b22] transition duration-300">
@@ -61,137 +57,118 @@
                 <i data-lucide="x" class="w-6 h-6 text-teal-400"></i>
             </button>
         </div>
-        <nav class="flex flex-col space-y-4 mt-8 text-center text-2xl">
-            <a href="#about" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">About</a>
-            <a href="#projects" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Projects</a>
-            <a href="#contact" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Contact</a>
+        <nav class="flex flex-col space-y-4 mt-8 text-2xl">
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300 font-semibold text-white" onclick="closeMenu()">Home</a>
+            <a href="projects.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Projects</a>
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Contact</a>
         </nav>
     </div>
 
-    <main>
-        <!-- Hero / About Me Section -->
-        <section id="about" class="section-container min-h-screen flex items-center pt-20">
-            <div class="flex flex-col md:flex-row items-center gap-12 w-full">
-                <!-- Profile Image -->
-                <div class="w-full md:w-1/3 flex justify-center">
-                    <!-- Replace with your actual image URL or use a placeholder -->
-                    <img src="https://placehold.co/300x300/161b22/c9d1d9?text=Your+Photo"
-                         alt="Your Profile Picture"
-                         class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-teal-400/50 shadow-2xl shadow-teal-500/10"
-                         onerror="this.onerror=null;this.src='https://placehold.co/300x300/161b22/c9d1d9?text=Your+Photo';">
-                </div>
-                <!-- Intro Text -->
-                <div class="w-full md:w-2/3 text-center md:text-left">
-                    <h1 class="text-5xl md:text-6xl font-extrabold mb-4 leading-tight">
-                        Hi, I'm <span class="text-teal-400">[Your Name]</span>
-                    </h1>
-                    <p class="text-2xl text-gray-400 mb-6">
-                        A passionate <span class="font-semibold text-teal-300">[Your Profession/Title]</span> building things for the web.
-                    </p>
-                    <p class="text-lg max-w-xl mx-auto md:mx-0 text-gray-300">
-                        I specialize in [Technology 1] and [Technology 2] and love solving complex problems with clean, efficient code. This is where I share my projects, thoughts, and professional journey. Feel free to connect!
-                    </p>
-                    <div class="mt-8 flex justify-center md:justify-start space-x-4">
-                        <!-- Replace # with your social links -->
-                        <a href="#" target="_blank" class="p-3 bg-teal-600 hover:bg-teal-500 rounded-full transition duration-300">
+    <main class="main-content-container pt-8 min-h-[80vh]">
+        
+        <!-- Main Layout: Contact Bar (Left) and Content (Right) -->
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <!-- Left Sidebar: Contact Information (Sticky on large screens) -->
+            <aside class="lg:w-1/4 w-full order-1 lg:order-none sticky top-20 h-fit">
+                <div class="card bg-[#1a202c]">
+                    <h3 class="text-2xl font-bold mb-4 text-teal-400 border-b border-[#30363d] pb-2">Connect</h3>
+                    
+                    <ul class="space-y-4 text-lg">
+                        <li class="flex items-center">
+                            <i data-lucide="mail" class="w-5 h-5 mr-3 text-teal-500"></i>
+                            <a href="mailto:your.email@example.com" class="hover:text-white transition duration-200 truncate">hamda.hmiida@gmail.com</a>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="phone" class="w-5 h-5 mr-3 text-teal-500"></i>
+                            <span class="text-gray-300">(+33) 7 48 29 75 31</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i data-lucide="map-pin" class="w-5 h-5 mr-3 text-teal-500"></i>
+                            <span class="text-gray-300">Nice, France</span>
+                        </li>
+                    </ul>
+
+                    <div class="mt-6 pt-4 border-t border-[#30363d] flex flex-wrap gap-4 justify-center lg:justify-start">
+                        <!-- Social Links -->
+                        <a href="https://github.com/HamdaHmida" target="_blank" class="p-3 bg-gray-700 hover:bg-teal-600 rounded-full transition duration-300" aria-label="GitHub Profile">
                             <i data-lucide="github" class="w-6 h-6 text-white"></i>
                         </a>
-                        <a href="#" target="_blank" class="p-3 bg-teal-600 hover:bg-teal-500 rounded-full transition duration-300">
+                        <a href="https://www.linkedin.com/in/hamda-hmida/" target="_blank" class="p-3 bg-gray-700 hover:bg-teal-600 rounded-full transition duration-300" aria-label="LinkedIn Profile">
                             <i data-lucide="linkedin" class="w-6 h-6 text-white"></i>
                         </a>
-                        <a href="mailto:your.email@example.com" class="p-3 bg-teal-600 hover:bg-teal-500 rounded-full transition duration-300">
-                            <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+                        <a href="#" target="_blank" class="p-3 bg-gray-700 hover:bg-teal-600 rounded-full transition duration-300" aria-label="Scholar Profile">
+                            <i data-lucide="graduation-cap" class="w-6 h-6 text-white"></i>
                         </a>
                     </div>
                 </div>
-            </div>
-        </section>
+            </aside>
+            
+            <!-- Right Main Content: Intro and Presentation -->
+            <section id="intro" class="lg:w-3/4 w-full order-2 lg:order-none">
+                <div class="card p-8 md:p-12">
+                    <!-- Hero Section -->
+                    <div class="flex flex-col md:flex-row items-start gap-8 mb-10 border-b border-[#30363d] pb-8">
+                        <!-- Profile Image -->
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQGS7LaHHqHLyQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1726092657503?e=1764201600&v=beta&t=GOXQtEGpLVonHXSTG8bxewxo-69Z4VPV9gM2X6Nz9WM"
+                             alt="Your Profile Picture"
+                             class="rounded-lg w-32 h-32 object-cover border-2 border-teal-400/50 shadow-xl"
+                             onerror="this.onerror=null;this.src='https://placehold.co/150x150/161b22/c9d1d9?text=Photo';">
 
-        <!-- Projects Section -->
-        <section id="projects" class="section-container">
-            <h2 class="text-4xl font-bold text-center mb-12 text-teal-400">Featured Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Intro Text -->
+                        <div>
+                            <h1 class="text-4xl md:text-5xl font-extrabold mb-2 leading-tight">
+                                Hello, I'm <span class="text-teal-400">Hamda</span>
+                            </h1>
+                            <p class="text-xl text-gray-400 font-medium">
+                                <span class="font-semibold text-teal-300">AI Engineer & Researcher</span>
+                                <br>
+                                <a href="https://www.cemef.minesparis.psl.eu/">CEMEF - Mines Paris - PSL</a>
+                            </p>
+                        </div>
+                    </div>
 
-                <!-- Project Card 1 -->
-                <div class="card p-6">
-                    <h3 class="text-2xl font-semibold mb-3">Project Title One</h3>
-                    <p class="text-gray-400 mb-4">
-                        A description of the project, what problem it solves, and the primary technologies used. Keep it concise and engaging.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-blue-900/50 text-blue-300 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
-                        <span class="bg-green-900/50 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Node.js</span>
+                    <!-- Personal Presentation -->
+                    <div id="about-me">
+                        <h2 class="text-3xl font-bold mb-4 text-teal-400">A Little Bit About Me</h2>
+                        
+                        <p class="text-lg text-gray-300 mb-6">
+                            I am an multidisciplinary engineer from <strong>Ecole Polytechnique de Tunisie</strong>, specialized in Artificial Intelligence.
+                        </p>
+                        
+                        <p class="text-lg text-gray-300 mb-6">
+                            Currently, I focus heavily on **TypeScript**, **React/Next.js**, and **Go (Golang)**, creating high-performance services that handle millions of requests daily. I believe in continuous learning, clean code, and working collaboratively in high-energy teams.
+                        </p>
+
+                        <div class="mt-8">
+                            <h3 class="text-2xl font-bold mb-3 text-teal-400">Core Expertise</h3>
+                            <ul class="grid grid-cols-2 sm:grid-cols-3 gap-4 text-lg text-gray-300">
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-400"></i> Frontend Architecture (React)</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-400"></i> Backend Services (Node, Go)</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-400"></i> Cloud Platforms (GCP/AWS)</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-400"></i> Database Design (PostgreSQL)</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-400"></i> DevOps & CI/CD</li>
+                                <li class="flex items-center"><i data-lucide="check-circle" class="w-4 h-4 mr-2 text-green-400"></i> Technical Mentorship</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="flex space-x-4">
-                        <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 flex items-center font-medium">
-                            <i data-lucide="link" class="w-4 h-4 mr-1"></i> Live Demo
-                        </a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
-                            <i data-lucide="github" class="w-4 h-4 mr-1"></i> Code
+
+                    <div class="mt-10 border-t border-[#30363d] pt-6">
+                        <a href="projects.html" class="inline-flex items-center px-6 py-3 text-lg font-semibold text-[#0d1117] bg-teal-400 rounded-lg hover:bg-teal-300 transition duration-300 shadow-lg hover:shadow-teal-500/50">
+                            <i data-lucide="rocket" class="w-5 h-5 mr-2"></i> View My Projects
                         </a>
                     </div>
+
                 </div>
-
-                <!-- Project Card 2 -->
-                <div class="card p-6">
-                    <h3 class="text-2xl font-semibold mb-3">Project Title Two</h3>
-                    <p class="text-gray-400 mb-4">
-                        This project focused on data visualization and performance optimization using modern JavaScript libraries.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
-                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Three.js</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 flex items-center font-medium">
-                            <i data-lucide="link" class="w-4 h-4 mr-1"></i> Live Demo
-                        </a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
-                            <i data-lucide="github" class="w-4 h-4 mr-1"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project Card 3 -->
-                <div class="card p-6">
-                    <h3 class="text-2xl font-semibold mb-3">Project Title Three</h3>
-                    <p class="text-gray-400 mb-4">
-                        A simple, yet powerful utility tool built entirely with front-end technologies to solve a daily task.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-purple-900/50 text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML</span>
-                        <span class="bg-cyan-900/50 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 flex items-center font-medium">
-                            <i data-lucide="link" class="w-4 h-4 mr-1"></i> Live Demo
-                        </a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
-                            <i data-lucide="github" class="w-4 h-4 mr-1"></i> Code
-                        </a>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section-container text-center">
-            <h2 class="text-4xl font-bold mb-6 text-teal-400">Get In Touch</h2>
-            <p class="text-xl max-w-lg mx-auto mb-8 text-gray-300">
-                I'm currently open to new opportunities and collaborations. Send me an email or connect on social media!
-            </p>
-            <a href="mailto:your.email@example.com" class="inline-flex items-center justify-center px-8 py-3 text-lg font-semibold text-[#0d1117] bg-teal-400 rounded-lg hover:bg-teal-300 transition duration-300 shadow-lg hover:shadow-teal-500/50">
-                <i data-lucide="send" class="w-5 h-5 mr-2"></i> Send Email
-            </a>
-        </section>
+            </section>
+        </div>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-[#161b22] border-t border-[#30363d] py-6 mt-12">
-        <div class="section-container text-center text-sm text-gray-500">
-            <p>&copy; 2024 Your Name. All rights reserved.</p>
-            <p class="mt-1">Built with <span class="text-red-500">&hearts;</span> and deployed via GitHub Pages.</p>
+    <footer id="footer" class="bg-[#161b22] border-t border-[#30363d] py-6 mt-12">
+        <div class="main-content-container text-center text-sm text-gray-500">
+            <p>&copy; 2025 Hamda Hmida. All rights reserved.</p>
+            <p class="mt-1">Static Site deployed via GitHub Pages.</p>
         </div>
     </footer>
 
@@ -221,20 +198,19 @@
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-
-                if (targetElement) {
-                    targetElement.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
                 }
             });
         });
-
     </script>
 </body>
 </html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamda's Projects Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic vectors -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        /* Custom styles for a modern, rounded aesthetic */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117; /* Dark background similar to GitHub */
+            color: #c9d1d9; /* Light text */
+            scroll-behavior: smooth;
+        }
+        .main-content-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .card {
+            background-color: #161b22; /* Slightly lighter dark background for cards */
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-[#0d1117]/90 backdrop-blur-md shadow-lg border-b border-[#30363d]">
+        <div class="main-content-container flex justify-between items-center py-4 px-4 sm:px-6 md:px-8">
+            <a href="index.html" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition duration-300">
+                Hamda Hmida
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300">Home</a>
+                <a href="projects.html" class="text-lg hover:text-teal-400 transition duration-300 font-semibold text-white">Projects</a>
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300">Contact</a>
+            </nav>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-[#161b22] transition duration-300">
+                <i data-lucide="menu" class="w-6 h-6 text-teal-400"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Drawer (Hidden by default) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0d1117] z-40 hidden md:hidden p-6">
+        <div class="flex justify-end">
+            <button id="close-menu-btn" class="p-2 rounded-lg hover:bg-[#161b22] transition duration-300">
+                <i data-lucide="x" class="w-6 h-6 text-teal-400"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4 mt-8 text-2xl">
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Home</a>
+            <a href="projects.html" class="py-2 hover:text-teal-400 transition duration-300 font-semibold text-white" onclick="closeMenu()">Projects</a>
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Contact</a>
+        </nav>
+    </div>
+
+    <main class="main-content-container pt-8 min-h-[80vh]">
+        <section id="projects" class="py-10">
+            <h1 class="text-5xl font-extrabold text-center mb-4 text-teal-400">My Portfolio Work</h1>
+            <p class="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
+                A selection of applications and technical demonstrations that showcase my skills in full-stack development.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Project Card 1: E-commerce Backend -->
+                <div class="card p-6">
+                    <h3 class="text-2xl font-semibold mb-3">Ongoing Research</h3>
+                    <p class="text-gray-400 mb-4">
+                        Advancing Foundation Models for fluid flow simulation and prediction.<br>
+                        Directed by: <strong>Prof. Youssef MESRI</strong><br>
+                        Supervised by: <strong>Dr. Hsiu-Wen CHANG JOLY</strong>
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-blue-900/50 text-blue-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Foundation Models</span>
+                        <span class="bg-indigo-900/50 text-indigo-300 text-xs font-medium px-2.5 py-0.5 rounded-full">CFD Simulations</span>
+                        <span class="bg-teal-900/50 text-teal-300 text-xs font-medium px-2.5 py-0.5 rounded-full">HPC</span>
+                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Turbulence</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://theses.fr/s410736" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
+                            <i data-lucide="book-open-check" class="w-4 h-4 mr-1"></i> More Informations
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Real-time Dashboard -->
+                <div class="card p-6">
+                    <h3 class="text-2xl font-semibold mb-3">Real-time Analytics Dashboard</h3>
+                    <p class="text-gray-400 mb-4">
+                        Developed a responsive single-page application (SPA) that visualizes streaming data using WebSockets and efficient component rendering.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-900/50 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
+                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2.5 py-0.5 rounded-full">TypeScript</span>
+                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full">D3.js</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <!-- Replace # with your project links -->
+                        <a href="project1.html" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
+                            <i data-lucide="book-open-check" class="w-4 h-4 mr-1"></i> More Informations
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Mobile-First Game -->
+                <div class="card p-6">
+                    <h3 class="text-2xl font-semibold mb-3">Responsive 2D Canvas Game</h3>
+                    <p class="text-gray-400 mb-4">
+                        A fully responsive browser game built entirely with vanilla JavaScript and the HTML Canvas API, optimized for both touch and desktop.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-pink-900/50 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML5 Canvas</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                        <span class="bg-gray-900/50 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <!-- Replace # with your project links -->
+                        <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 flex items-center font-medium">
+                            <i data-lucide="link" class="w-4 h-4 mr-1"></i> Live Demo
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
+                            <i data-lucide="code" class="w-4 h-4 mr-1"></i> Repository
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Project Card 4: Data Pipeline Tool -->
+                <div class="card p-6">
+                    <h3 class="text-2xl font-semibold mb-3">Automated Data Processing Pipeline</h3>
+                    <p class="text-gray-400 mb-4">
+                        A Python-based utility for extracting, transforming, and loading (ETL) large datasets into a structured warehouse environment.
+                    </p>
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
+                        <span class="bg-purple-900/50 text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Pandas</span>
+                        <span class="bg-gray-900/50 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Apache Airflow</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <!-- Replace # with your project links -->
+                        <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 flex items-center font-medium">
+                            <i data-lucide="code" class="w-4 h-4 mr-1"></i> Repository
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-[#161b22] border-t border-[#30363d] py-6 mt-12">
+        <div class="main-content-container text-center text-sm text-gray-500">
+            <p>&copy; 2025 Hamda Hmida. All rights reserved.</p>
+            <p class="mt-1">Static Site deployed via GitHub Pages.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Icon rendering -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        // Toggle mobile menu visibility
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        closeMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Function to close the menu after clicking a link (used in anchor tags)
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
