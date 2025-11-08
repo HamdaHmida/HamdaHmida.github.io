@@ -32,6 +32,25 @@
             transform: translateY(-4px);
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
         }
+        .company-logo {
+            position: absolute;
+            top: 1rem;   /* 16px from top */
+            right: 1rem; /* 16px from right */
+            width: 48px; /* Slightly larger logo */
+            height: 48px;
+            border-radius: 50%; /* Circle shape */
+            object-fit: contain; /* Ensure logo fits without cropping */
+            background-color: rgba(255, 255, 255, 0.05); /* Slight background for contrast */
+            padding: 4px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: all 0.2s ease-in-out; /* Keep a subtle transition on the logo itself */
+            transform: scale(1); /* Ensure it's not scaled down initially */
+        }
+        .card:hover .company-logo { /* Add hover effect for logo when card is hovered */
+            transform: scale(1.08);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -72,13 +91,16 @@
         <section id="projects" class="py-10">
             <h1 class="text-5xl font-extrabold text-center mb-4 text-teal-400">My Portfolio Work</h1>
             <p class="text-xl text-center text-gray-400 max-w-2xl mx-auto mb-12">
-                A selection of applications and technical demonstrations that showcase my skills in full-stack development.
+                A selection of applications and projects developped during my previous experiences.
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-                <!-- Project Card 1: E-commerce Backend -->
+                <!-- Project Card 1: PhD work -->
                 <div class="card p-6">
+                    <span><img src="https://media.licdn.com/dms/image/v2/C4E0BAQHgKzPBVtaKUw/company-logo_200_200/company-logo_200_200/0/1670515150303?e=1764201600&v=beta&t=00mWixXmdpQIspzwic7eG2r5jRIkTnBfjRmv7vfFG6Y" 
+                             alt="Airbus" 
+                             class="company-logo"> <!-- cursor-default indicates it's not clickable --></span>
                     <h3 class="text-2xl font-semibold mb-3">Ongoing Research</h3>
                     <p class="text-gray-400 mb-4">
                         Advancing Foundation Models for fluid flow simulation and prediction.<br>
@@ -93,67 +115,51 @@
                     </div>
                     <div class="flex space-x-4">
                         <a href="https://theses.fr/s410736" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
-                            <i data-lucide="book-open-check" class="w-4 h-4 mr-1"></i> More Informations
+                            <i data-lucide="book-open-check" class="w-4 h-4 mr-1"></i> More informations
                         </a>
                     </div>
                 </div>
 
-                <!-- Project Card 2: Real-time Dashboard -->
+                <!-- Project Card 2: Scikit decide -->
                 <div class="card p-6">
-                    <h3 class="text-2xl font-semibold mb-3">Real-time Analytics Dashboard</h3>
+                    <span><img src="https://media.licdn.com/dms/image/v2/C4D0BAQF2j_LDG_TOzg/company-logo_200_200/company-logo_200_200/0/1631375371456/airbusgroup_logo?e=1764201600&v=beta&t=zIMd0Rwbg-wChMQxY8o9SqgH9jm1wQZS64Ef5uYyM04" 
+                             alt="Airbus" 
+                             class="company-logo"> <!-- cursor-default indicates it's not clickable --></span>
+                    <h3 class="text-2xl font-semibold mb-3">Airbus Scikit-decide</h3>
                     <p class="text-gray-400 mb-4">
-                        Developed a responsive single-page application (SPA) that visualizes streaming data using WebSockets and efficient component rendering.
+                        As intern with Airbus, I have work to extend their existing AI framework to add Reinforcement Learning to automate flight path palnning and emergency diversions.
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <span class="bg-green-900/50 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Reinforcement Learning</span>
+                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Combinatorial Optimization</span>
+                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full">MUGS Analysis</span>
+                    </div>
+                    <div class="flex space-x-4">
+                        <!-- Replace # with your project links -->
+                        <a href="https://airbus.github.io/scikit-decide/#what-is-it" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
+                            <i data-lucide="book-open-check" class="w-4 h-4 mr-1"></i> More informations
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: DRP -->
+                <div class="card p-6">
+                    <span><img src="https://media.licdn.com/dms/image/v2/C4D0BAQEsisgA_qvMKA/company-logo_200_200/company-logo_200_200/0/1630552467720?e=1764201600&v=beta&t=gKwozUbWJUpZu92JCPMGmKOlHhjBrst5JFVYr2fartw" 
+                             alt="ReDX" 
+                             class="company-logo"> <!-- cursor-default indicates it's not clickable --></span>
+
+                    <h3 class="text-2xl font-semibold mb-3">Optimization Techniques <br>for Digital Rock Physics Workflow</h3>
+                    <p class="text-gray-400 mb-4">
+                        Address the Digital Rock Physics Workﬂow pain points with Machine Learning Techniques.
                     </p>
                     <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-green-900/50 text-green-300 text-xs font-medium px-2.5 py-0.5 rounded-full">React</span>
-                        <span class="bg-yellow-900/50 text-yellow-300 text-xs font-medium px-2.5 py-0.5 rounded-full">TypeScript</span>
-                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full">D3.js</span>
+                        <span class="bg-pink-900/50 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Diffusion Models</span>
+                        <span class="bg-cyan-900/50 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">GANs</span>
+                        <span class="bg-red-900/50 text-red-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Segmentation</span>
                     </div>
                     <div class="flex space-x-4">
                         <!-- Replace # with your project links -->
                         <a href="project1.html" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
-                            <i data-lucide="book-open-check" class="w-4 h-4 mr-1"></i> More Informations
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project Card 3: Mobile-First Game -->
-                <div class="card p-6">
-                    <h3 class="text-2xl font-semibold mb-3">Responsive 2D Canvas Game</h3>
-                    <p class="text-gray-400 mb-4">
-                        A fully responsive browser game built entirely with vanilla JavaScript and the HTML Canvas API, optimized for both touch and desktop.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-pink-900/50 text-pink-300 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML5 Canvas</span>
-                        <span class="bg-cyan-900/50 text-cyan-300 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
-                        <span class="bg-gray-900/50 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Tailwind CSS</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <!-- Replace # with your project links -->
-                        <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 flex items-center font-medium">
-                            <i data-lucide="link" class="w-4 h-4 mr-1"></i> Live Demo
-                        </a>
-                        <a href="#" target="_blank" class="text-gray-400 hover:text-white flex items-center font-medium">
-                            <i data-lucide="code" class="w-4 h-4 mr-1"></i> Repository
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Project Card 4: Data Pipeline Tool -->
-                <div class="card p-6">
-                    <h3 class="text-2xl font-semibold mb-3">Automated Data Processing Pipeline</h3>
-                    <p class="text-gray-400 mb-4">
-                        A Python-based utility for extracting, transforming, and loading (ETL) large datasets into a structured warehouse environment.
-                    </p>
-                    <div class="flex flex-wrap gap-2 mb-4">
-                        <span class="bg-orange-900/50 text-orange-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Python</span>
-                        <span class="bg-purple-900/50 text-purple-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Pandas</span>
-                        <span class="bg-gray-900/50 text-gray-300 text-xs font-medium px-2.5 py-0.5 rounded-full">Apache Airflow</span>
-                    </div>
-                    <div class="flex space-x-4">
-                        <!-- Replace # with your project links -->
-                        <a href="#" target="_blank" class="text-teal-400 hover:text-teal-300 flex items-center font-medium">
-                            <i data-lucide="code" class="w-4 h-4 mr-1"></i> Repository
+                            <i data-lucide="book-open-check" class="w-4 h-4 mr-1"></i> More details
                         </a>
                     </div>
                 </div>
