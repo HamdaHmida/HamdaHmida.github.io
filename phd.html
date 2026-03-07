@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamda Hmida - PhD Progress & News</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic vectors -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            scroll-behavior: smooth;
+        }
+        .main-content-container {
+            max-width: 1000px; /* Narrower container for a "feed" look */
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+        .news-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        .news-card:hover {
+            border-color: #58a6ff;
+        }
+        .news-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-bottom: 1px solid #30363d;
+        }
+        @media (min-width: 768px) {
+            .news-image {
+                width: 300px;
+                height: 100%;
+                border-bottom: none;
+                border-right: 1px solid #30363d;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="sticky top-0 z-50 bg-[#0d1117]/90 backdrop-blur-md shadow-lg border-b border-[#30363d]">
+        <div class="main-content-container flex justify-between items-center py-4">
+            <a href="index.html" class="text-2xl font-bold text-teal-400 hover:text-teal-300 transition duration-300">
+                Hamda Hmida
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300">Home</a>
+                <a href="projects.html" class="text-lg hover:text-teal-400 transition duration-300 font-semibold text-white">Projects</a>
+                <a href="HamdaResume.pdf" download="Hamda Resume.pdf" class="text-lg hover:text-teal-400 transition duration-300">Resume</a>
+                <a href="index.html" class="text-lg hover:text-teal-400 transition duration-300">Contact</a>
+            </nav>
+            <button id="mobile-menu-btn" class="md:hidden p-2 rounded-lg hover:bg-[#161b22]">
+                <i data-lucide="menu" class="w-6 h-6 text-teal-400"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0d1117] z-40 hidden md:hidden p-6">
+        <div class="flex justify-end">
+            <button id="close-menu-btn" class="p-2 rounded-lg hover:bg-[#161b22]">
+                <i data-lucide="x" class="w-6 h-6 text-teal-400"></i>
+            </button>
+        </div>
+        <nav class="flex flex-col space-y-4 mt-8 text-2xl">
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Home</a>
+            <a href="projects.html" class="py-2 hover:text-teal-400 transition duration-300 font-semibold text-white" onclick="closeMenu()">Projects</a>
+            <a href="HamdaResume.pdf" download="Hamda Resume.pdf" class="text-lg hover:text-teal-400 transition duration-300" onclick="closeMenu()">Resume</a>
+            <a href="index.html" class="py-2 hover:text-teal-400 transition duration-300" onclick="closeMenu()">Contact</a>
+        </nav>
+    </div>
+
+    <main class="main-content-container pt-8 min-h-[80vh]">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-extrabold text-teal-400 mb-4">PhD Journey</h1>
+            <p class="text-xl text-gray-400 italic">Updates on my research, publications, and academic milestones.</p>
+        </header>
+
+        <div class="space-y-8">
+            <!-- News Item 5: Paper Publication -->
+            <article class="news-card flex flex-col md:flex-row">
+                <img src="pictures/ICLR2026.jpg" alt="Paper Publication" class="news-image">
+                <div class="p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-sm text-purple-400 mb-2">
+                            <i data-lucide="book-open" class="w-4 h-4 mr-2"></i>
+                            <span>March 5, 2026</span>
+                            <span class="mx-2 text-gray-600">•</span>
+                            <span class="uppercase font-bold tracking-wider">Publication</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-3 text-white">ICLR Workshop Publication</h2>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            I am thrilled to announce that my latest work has been accepted as a conference paper at the ICLR Workshop on AI & PDE. This publication highlights our advancements in using foundation models to solve complex partial differential equations for fluid flow applications.
+                        </p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://openreview.net/forum?id=VFLwvtTwWF&referrer" class="text-teal-400 hover:underline flex items-center text-sm">
+                            <i data-lucide="file-text" class="w-4 h-4 mr-1"></i> Read Paper
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- News Item 4: Paper Publication -->
+            <article class="news-card flex flex-col md:flex-row">
+                <img src="pictures/compno.jpg" alt="Paper Publication" class="news-image">
+                <div class="p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-sm text-purple-400 mb-2">
+                            <i data-lucide="book-open" class="w-4 h-4 mr-2"></i>
+                            <span>January 15, 2026</span>
+                            <span class="mx-2 text-gray-600">•</span>
+                            <span class="uppercase font-bold tracking-wider">Publication</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-3 text-white">First Research Publication</h2>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            I'm excited to announce that our first research article "CompNO: A Novel Foundation Model Approach for Solving Partial Differential Equations" has officially been published in MDPI Applied Sciences journal, in their Special Issue Innovations in Artificial Neural Network Applications.
+                        </p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://www.mdpi.com/2076-3417/16/2/972" class="text-teal-400 hover:underline flex items-center text-sm">
+                            <i data-lucide="file-text" class="w-4 h-4 mr-1"></i> Read Paper
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- News Item 3: workshop -->
+            <article class="news-card flex flex-col md:flex-row">
+                <img src="pictures/workshop.jpeg" alt="Conference" class="news-image">
+                <div class="p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-sm text-teal-500 mb-2">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>December 10, 2025</span>
+                            <span class="mx-2 text-gray-600">•</span>
+                            <span class="uppercase font-bold tracking-wider">Conference</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-3 text-white">Best Poster Award</h2>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            I am honored to have received the Best Poster Award at the Mines Paris AI Workshop for my research on advancing foundation models for fluid flow. This recognition highlights the potential of hybrid AI-physics approaches to transform complex scientific simulations and predictions.
+                        </p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- News Item 2: SMR -->
+            <article class="news-card flex flex-col md:flex-row">
+                <img src="pictures/ictp.jpg" alt="Conference" class="news-image">
+                <div class="p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-sm text-teal-500 mb-2">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            <span>July 10, 2025</span>
+                            <span class="mx-2 text-gray-600">•</span>
+                            <span class="uppercase font-bold tracking-wider">Conference</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-3 text-white">Poster presentation at ICTP</h2>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            I recently participated in the Advanced School on Foundation Models for Scientific Discovery to explore new frontiers in AI-driven research. During the event, I presented a poster detailing my work on fluid flow simulation and engaged with experts on the future of self-supervised learning in the physical sciences.
+                        </p>
+                    </div>
+                    <div class="flex space-x-4">
+                        <a href="https://indico.ictp.it/event/10853/overview" class="text-teal-400 hover:underline flex items-center text-sm">
+                            <i data-lucide="external-link" class="w-4 h-4 mr-1"></i> View Program
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- News Item 1: Starting PhD -->
+            <article class="news-card flex flex-col md:flex-row">
+                <img src="https://www.cemef.mines-paristech.fr/wp-content/uploads/2019/08/MINES-Sophia.jpg" alt="Mines" class="news-image">
+                <div class="p-6 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center text-sm text-orange-400 mb-2">
+                            <i data-lucide="flask-conical" class="w-4 h-4 mr-2"></i>
+                            <span>December 02, 2024</span>
+                            <span class="mx-2 text-gray-600">•</span>
+                            <span class="uppercase font-bold tracking-wider">Milestone</span>
+                        </div>
+                        <h2 class="text-2xl font-bold mb-3 text-white">PhD Research Kickoff</h2>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            I have officially started my PhD research on advancing foundation models for fluid flow simulation and prediction. This work aims to leverage large-scale pre-training to enhance the accuracy and efficiency of complex computational fluid dynamics.
+                        </p>
+                        <div class="flex space-x-4">
+                        <a href="https://theses.fr/s410736" class="text-teal-400 hover:underline flex items-center text-sm">
+                            <i data-lucide="file-text" class="w-4 h-4 mr-1"></i> Project Abstract
+                        </a>
+                    </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="footer" class="bg-[#161b22] border-t border-[#30363d] py-12 mt-20">
+        <div class="main-content-container text-center">
+            <h3 class="text-teal-400 text-xl font-bold mb-4">Interested in my research?</h3>
+            <p class="text-gray-400 mb-6">Let's discuss potential collaborations or academic exchange.</p>
+            <div class="flex justify-center space-x-4 mb-8">
+                <a href="mailto:hamda.hmida@minesparis.psl.eu" class="p-3 bg-gray-700 hover:bg-teal-600 rounded-full transition"><i data-lucide="mail"></i></a>
+                <a href="https://www.linkedin.com/in/hamda-hmida/" class="p-3 bg-gray-700 hover:bg-teal-600 rounded-full transition"><i data-lucide="linkedin"></i></a>
+            </div>
+            <div class="main-content-container text-center text-sm text-gray-500">
+            <p>&copy; 2025 Hamda Hmida. All rights reserved.</p>
+            <p class="mt-1">Static Site deployed via GitHub Pages.</p>
+        </div>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.remove('hidden'));
+        closeMenuBtn.addEventListener('click', () => mobileMenu.classList.add('hidden'));
+        function closeMenu() { mobileMenu.classList.add('hidden'); }
+    </script>
+</body>
+</html>
